@@ -159,10 +159,13 @@ You can now interact with your multi-agent AI system.
 
 
 ───────────────────────────────────────────────────────────────────────
-> [!NOTE]
-> Gemini API key used (Tier 1) &
-> Model used __gemini-2.5-flash_
-
+Notes:-
+- The API used is Gemini Tier 1 API & with gemini-2.5-flash' model
+- logs file contains the loggings
+- test_api.py file is used to check api working
+- Model might hallucinate. Add question properly with proper context of pdf/reaserch paper as needed. 
+- Upload a .pdf file under 200MB size.
+  
 ───────────────────────────────────────────────────────────────────────
 
 
