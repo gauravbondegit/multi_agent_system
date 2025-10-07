@@ -57,8 +57,6 @@ These agents are domain experts that perform the actual work after the Controlle
 - Fetches recent research papers, scientific studies, and technical papers
 - Utilizes the ArXiv API or Hugging Face’s arxiv_dataset
 
----
-
 ### 3. Synthesizer
 After all specialist agents have gathered their information (the context), the data is passed to the Synthesizer — a final LLM component.
 
