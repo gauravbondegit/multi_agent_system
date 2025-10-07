@@ -70,7 +70,6 @@ After all specialist agents have gathered their information (the context), the d
 
 ───────────────────────────────────────────────────────────────────────
 ## 🔄 The Workflow
----
 
 The journey from your question to the final answer follows a well-orchestrated sequence:
 
@@ -132,7 +131,9 @@ The application requires a Google API key to function.
 GOOGLE_API_KEY="AIzaSy...your...actual...key..."
 BACKEND_URL="http://127.0.0.1:8000"
 ```
-# Step 5: Run the Application
+__Step 5: Run the Application__
+**__Step 5: Run the Application__**
+_Step 5: Run the Application_
 
 This application has two parts: a backend server and a frontend interface. You need to run them in two separate terminals.
 
