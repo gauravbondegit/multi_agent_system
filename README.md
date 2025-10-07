@@ -97,5 +97,7 @@ The journey from your question to the final answer follows a well-orchestrated s
 5. **Response**  
    The Synthesizer writes the final answer, which is sent back to the frontend for you to read.
 
-────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────
+
+
 
