@@ -12,7 +12,7 @@ BACKEND_URL = os.getenv("BACKEND_URL")
 
 
 st.set_page_config(layout="wide")
-st.title("🧠 Multi-Agent AI System")
+st.title("Multi-Agentic System with Dynamic Decision Making")
 
 # Initialize session state
 if 'uploaded_filename' not in st.session_state:
