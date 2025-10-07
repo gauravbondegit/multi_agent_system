@@ -12,3 +12,4 @@ langchain-community
 arxiv
 requests
 ddgs
+python-multipart
