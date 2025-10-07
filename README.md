@@ -68,9 +68,9 @@ After all specialist agents have gathered their information (the context), the d
 - Generate a single, coherent, and well-structured answer
 - Ensure readability and consistency before presenting the response to the user
 
+─────────────────────────────────────────────────────────────────────────────
+## 🔄 The Workflow
 ---
-
-## 🔄 How It All Works: The Workflow
 
 The journey from your question to the final answer follows a well-orchestrated sequence:
 
