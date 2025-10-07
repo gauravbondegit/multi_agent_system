@@ -4,7 +4,7 @@
 This project implements a Multi-Agent AI System that dynamically decides which specialized agents to use for answering user queries. The system includes a FastAPI backend, and integrates Google AI Studio (Gemini) APIs for intelligent orchestration and answer synthesis.
 
 ─────────────────────────────────────────────────────────────────────────────
-## 🏛️ System Architecture
+# 🏛️ System Architecture
 
 At its heart, the system is a web application with a clear separation of duties:
 
@@ -22,8 +22,6 @@ It runs on a server and manages:
 - Communication between agents
 - Integration with the LLM and APIs
 - Logging of controller decisions and traces
-
----
 
 ## 🧩 Core Components
 
