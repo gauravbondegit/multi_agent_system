@@ -69,7 +69,7 @@ After all specialist agents have gathered their information (the context), the d
 - Generate a single, coherent, and well-structured answer
 - Ensure readability and consistency before presenting the response to the user
 
-────────────────────────────────────────────────────────────
+___
 ## The Workflow
 
 The journey from your question to the final answer follows a well-orchestrated sequence:
@@ -93,7 +93,7 @@ The journey from your question to the final answer follows a well-orchestrated s
 5. **Response**  
    The Synthesizer writes the final answer, which is sent back to the frontend for you to read.
 
-────────────────────────────────────────────────────────────
+___
 ## Setup
 
 Follow these steps to set up and run the multi-agent system on your local machine.
@@ -157,7 +157,8 @@ streamlit run app.py
 
 You can now interact with your multi-agent AI system.
 
-────────────────────────────────────────────────────────────
+___
+
 ## Notes:-
 - The API used is Gemini Tier 1 API & with gemini-2.5-flash' model
 - logs file contains the loggings
@@ -166,7 +167,7 @@ You can now interact with your multi-agent AI system.
 - Upload a .pdf file under 200MB size.
 - requirements.txt file contains all dependencies.
   
-────────────────────────────────────────────────────────────
+___
 
 
 
