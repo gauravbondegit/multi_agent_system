@@ -4,7 +4,7 @@
 This project implements a Multi-Agent AI System that dynamically decides which specialized agents to use for answering user queries. The system includes a FastAPI backend, and integrates Google AI Studio (Gemini) APIs for intelligent orchestration and answer synthesis.
 
 ───────────────────────────────────────────────────────────────────────
-# 🏛️ System Architecture
+## 🏛️ System Architecture
 
 At its heart, the system is a web application with a clear separation of duties:
 
@@ -97,7 +97,7 @@ The journey from your question to the final answer follows a well-orchestrated s
 
 Follow these steps to set up and run the multi-agent system on your local machine.
 
-**Step 1: Clone the Repository**
+#### Step 1: Clone the Repository
 First, clone the project repository from GitHub to your local computer.
 
 ```
@@ -105,7 +105,7 @@ git clone https://github.com/gauravbondegit/multi_agent_system.git
 
 cd <your-repository-directory>
 ```
-**Step 2: Set Up a Virtual Environment**
+#### Step 2: Set Up a Virtual Environment
 
 Create a virtual environment
 ```
@@ -115,12 +115,12 @@ Activate the virtual environment
 ```
 myenv\Scripts\activate
 ```
-**Step 3: Install Dependencies**
+#### Step 3: Install Dependencies
 
 ```
 pip install -r requirements.txt
 ```
-**Step 4: Configure Environment Variables**
+#### Step 4: Configure Environment Variables
 The application requires a Google API key to function.
 
 1. Create the file named .env in the project's root directory.
@@ -132,7 +132,7 @@ GOOGLE_API_KEY="AIzaSy...your...actual...key..."
 BACKEND_URL="http://127.0.0.1:8000"
 ```
 
-**Step 5: Run the Application**
+#### Step 5: Run the Application
 
 This application has two parts: a backend server and a frontend interface. You need to run them in two separate terminals.
 
@@ -159,7 +159,7 @@ You can now interact with your multi-agent AI system.
 
 
 ───────────────────────────────────────────────────────────────────────
-Notes:-
+## Notes:-
 - The API used is Gemini Tier 1 API & with gemini-2.5-flash' model
 - logs file contains the loggings
 - test_api.py file is used to check api working
