@@ -133,7 +133,6 @@ BACKEND_URL="http://127.0.0.1:8000"
 ```
 
 **Step 5: Run the Application**
----
 
 This application has two parts: a backend server and a frontend interface. You need to run them in two separate terminals.
 
