@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+streamlit
+python-dotenv
+google-generativeai
+gunicorn
+langchain
+langchain_google_genai
+faiss-cpu
+pypdf
+langchain-community
+arxiv
+requests
+ddgs
