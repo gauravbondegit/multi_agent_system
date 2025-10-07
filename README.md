@@ -3,7 +3,7 @@
 
 This project implements a Multi-Agent AI System that dynamically decides which specialized agents to use for answering user queries. The system includes a FastAPI backend, and integrates Google AI Studio (Gemini) APIs for intelligent orchestration and answer synthesis.
 
-─────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────
 # 🏛️ System Architecture
 
 At its heart, the system is a web application with a clear separation of duties:
@@ -68,7 +68,7 @@ After all specialist agents have gathered their information (the context), the d
 - Generate a single, coherent, and well-structured answer
 - Ensure readability and consistency before presenting the response to the user
 
-─────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────
 ## 🔄 The Workflow
 ---
 
@@ -93,7 +93,75 @@ The journey from your question to the final answer follows a well-orchestrated s
 5. **Response**  
    The Synthesizer writes the final answer, which is sent back to the frontend for you to read.
 
-─────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────
+## 🚀 Getting Started
+
+Follow these steps to set up and run the multi-agent system on your local machine.
+
+# Step 1: Clone the Repository
+First, clone the project repository from GitHub to your local computer.
+
+```
+git clone https://github.com/gauravbondegit/multi_agent_system.git
+
+cd <your-repository-directory>
+```
+# Step 2: Set Up a Virtual Environment
+
+Create a virtual environment
+```
+python -m venv myenv
+```
+Activate the virtual environment
+```
+myenv\Scripts\activate
+```
+# Step 3: Install Dependencies
+
+```
+pip install -r requirements.txt
+```
+# Step 4: Configure Environment Variables
+The application requires a Google API key to function.
+
+1. Create the file named .env in the project's root directory.
+
+2. Open the file and write-
+```
+# .env file
+GOOGLE_API_KEY="AIzaSy...your...actual...key..."
+BACKEND_URL="http://127.0.0.1:8000"
+```
+# Step 5: Run the Application
+
+This application has two parts: a backend server and a frontend interface. You need to run them in two separate terminals.
+
+1. Run the Backend Server (Terminal 1):
+- Make sure your virtual environment is activated.
+- Start the FastAPI server using Uvicorn.
+```
+uvicorn main:app --reload
+```
+- You should see a message indicating the server is running on http://127.0.0.1:8000. Leave this terminal running.
+
+2. Run the Frontend App (Terminal 2):
+
+- Open a new terminal and activate the virtual environment there as well.
+
+- Start the Streamlit application.
+```
+streamlit run app.py
+```
+- This will automatically open a new tab in your web browser with the application's user interface.
+
+You can now interact with your multi-agent AI system.
+
+
+
+───────────────────────────────────────────────────────────────────────
+
+
+───────────────────────────────────────────────────────────────────────
 
 
 
