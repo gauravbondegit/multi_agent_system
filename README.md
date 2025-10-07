@@ -165,6 +165,7 @@ You can now interact with your multi-agent AI system.
 - test_api.py file is used to check api working
 - Model might hallucinate. Add question properly with proper context of pdf/reaserch paper as needed. 
 - Upload a .pdf file under 200MB size.
+- requirements.txt file contains all dependencies.
   
 ───────────────────────────────────────────────────────────────────────
 
