@@ -39,8 +39,6 @@ When you ask a question, the Controller is the first component to process it.
 
 The Controller ensures that every query is handled by the most appropriate agent.
 
----
-
 ### 2. 🤖 Specialized Agents (The "Team Members")
 These agents are domain experts that perform the actual work after the Controller assigns them a task.
 
