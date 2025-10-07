@@ -159,7 +159,9 @@ You can now interact with your multi-agent AI system.
 
 
 ───────────────────────────────────────────────────────────────────────
-
+> [!NOTE]
+> Gemini API key used Tier 1 
+> Model used __gemini-2.5-flash_
 
 ───────────────────────────────────────────────────────────────────────
 
