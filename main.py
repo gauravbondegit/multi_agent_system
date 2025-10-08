@@ -16,8 +16,7 @@ load_dotenv()
 app = FastAPI(title="Multi-Agent AI System")
 
 # --- Global Exception Handler ---
-# This is the new, improved part. It catches any unexpected server errors
-# and sends back a clean JSON response, preventing crashes.
+# This catches any unexpected server errors and prevents the app from crashing.
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
