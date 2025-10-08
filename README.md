@@ -24,6 +24,9 @@ It runs on a server and manages:
 - Integration with the LLM and APIs
 - Logging of controller decisions and traces
 
+  ![WhatsApp Image 2025-10-08 at 19 54 16_81a804a3](https://github.com/user-attachments/assets/72129d97-98fd-4622-921c-21ac384d37e5)
+
+
 ## Core Components
 
 ### 1. Controller Agent 
@@ -155,8 +158,40 @@ streamlit run app.py
 
 You can now interact with your multi-agent AI system.
 
-___
+![WhatsApp Image 2025-10-08 at 19 56 36_73acb838](https://github.com/user-attachments/assets/5f629ebe-c4e9-42b1-af3d-6beb17a57462)
+![WhatsApp Image 2025-10-08 at 19 56 36_4f9a9a64](https://github.com/user-attachments/assets/414f55d8-319c-4370-a89e-0db20397a4fe)
 
+___
+## File Structure:-
+```
+/multi_agent_system
+|
+├── agents/                # Directory for all specialized agents
+│   ├── __init__.py         # Makes the folder a Python package
+│   ├── arxiv_agent.py      # Logic for the ArXiv search agent
+│   ├── pdf_rag_agent.py    # Logic for the PDF RAG agent
+│   └── web_search_agent.py   # Logic for the web search agent
+|
+├── domain_pdfs/           # Contains sample PDFs for testing
+|
+├── logs/                  # Stores logs from the system
+|
+├── uploads/               # Temporary storage for user-uploaded PDFs
+|
+├── vector_store/          # Caches the FAISS vector embeddings for PDFs
+|
+├── .env                   # Stores secret environment variables (API keys)
+├── .gitignore             # Specifies files for Git to ignore
+├── README.md              # Project documentation
+├── app.py                 # The Streamlit frontend application
+├── controller.py          # The Controller Agent logic (the "brain")
+├── main.py                # The FastAPI backend server
+├── requirements.txt       # Lists all Python package dependencies
+├── test_api.py            # A script for testing the Google API key
+└── utils.py               # Helper functions, including the answer synthesizer
+
+```
+___
 ## Notes:-
 - The API used is Gemini Tier 1 API & with gemini-2.5-flash' model
 - logs file contains the loggings
@@ -165,4 +200,3 @@ ___
 - Upload a .pdf file under 200MB size.
 - requirements.txt file contains all dependencies.
   
-___
