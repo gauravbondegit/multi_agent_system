@@ -201,4 +201,8 @@ ___
 - Model might hallucinate. Add question properly with proper context of pdf/reaserch paper as needed. 
 - Upload a .pdf file under 200MB size.
 - requirements.txt file contains all dependencies.
+___
+## License
+
+This project is licensed under the **MIT License**.
   
