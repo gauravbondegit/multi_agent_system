@@ -56,17 +56,16 @@ These agents are domain experts that perform the actual work after the Controlle
 #### Web Search Agent
 - Acts as a real-time researcher
 - Handles queries about current events, latest developments, or news
-- Uses APIs like SerpAPI or DuckDuckGo to fetch up-to-date information
+- Uses DuckDuckGo search to fetch up-to-date information
 
 #### ArXiv Agent
 - Functions as an academic specialist
 - Fetches recent research papers, scientific studies, and technical papers
-- Utilizes the ArXiv API or Hugging Face’s arxiv_dataset
 
 ### 3. Synthesizer
 After all specialist agents have gathered their information (the context), the data is passed to the Synthesizer — a final LLM component.
 
-*here context means all the history of human ,ai and tool messages.
+*here context means the combined outputs returned by the selected agents (PDF, Web, and/or ArXiv).
 
 **Responsibilities:**
 - Review and combine all gathered information
@@ -108,7 +107,7 @@ First, clone the project repository from GitHub to your local computer.
 ```
 git clone https://github.com/gauravbondegit/multi_agent_system.git
 
-cd <your-repository-directory>
+cd multi_agent_system
 ```
 #### Step 2: Set Up a Virtual Environment
 
@@ -175,8 +174,6 @@ ___
 │   ├── pdf_rag_agent.py    # Logic for the PDF RAG agent
 │   └── web_search_agent.py   # Logic for the web search agent
 |
-├── domain_pdfs/           # Contains sample PDFs for testing
-|
 ├── logs/                  # Stores logs from the system
 |
 ├── uploads/               # Temporary storage for user-uploaded PDFs
@@ -200,7 +197,7 @@ ___
 - logs file contains the loggings
 - test_api.py file is used to check api working
 - Model might hallucinate. Add question properly with proper context of pdf/reaserch paper as needed. 
-- Upload a .pdf file under 200MB size.
+- Upload a valid .pdf file (no explicit server-side size limit is configured in code).
 - requirements.txt file contains all dependencies.
 ___
 ## License

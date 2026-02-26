@@ -13,6 +13,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel('gemini-2.5-flash') 
 
 CONTROLLER_LOG_FILE = "logs/controller_log.jsonl"
+ALLOWED_AGENTS = {"PDF_RAG_AGENT", "WEB_SEARCH_AGENT", "ARXIV_AGENT"}
 
 def get_controller_prompt(query: str, pdf_uploaded: bool):
     """Generates the prompt for the controller LLM."""
@@ -42,16 +43,52 @@ def get_controller_prompt(query: str, pdf_uploaded: bool):
     return prompt
 
 def extract_json_from_string(text: str):
-    """Extracts a JSON object from a string, even if it's embedded in other text."""
-    # This regex finds a substring that starts with { and ends with }
-    match = re.search(r'\{.*\}', text, re.DOTALL)
-    if match:
-        json_str = match.group(0)
-        try:
-            return json.loads(json_str)
-        except json.JSONDecodeError:
-            return None
+    """Extracts the first valid JSON object from free-form model text."""
+    if not text:
+        return None
+
+    fenced_json_match = re.search(r"```json\s*(\{.*?\})\s*```", text, re.DOTALL | re.IGNORECASE)
+    candidates = []
+    if fenced_json_match:
+        candidates.append(fenced_json_match.group(1))
+    candidates.append(text)
+
+    decoder = json.JSONDecoder()
+    for candidate in candidates:
+        idx = 0
+        while idx < len(candidate):
+            start = candidate.find("{", idx)
+            if start == -1:
+                break
+            try:
+                parsed_obj, end = decoder.raw_decode(candidate[start:])
+                if isinstance(parsed_obj, dict):
+                    return parsed_obj
+                idx = start + end
+            except json.JSONDecodeError:
+                idx = start + 1
     return None
+
+def normalize_decision(decision_json: dict):
+    """Normalizes and validates controller JSON to expected schema."""
+    if not isinstance(decision_json, dict):
+        return None
+
+    reasoning = decision_json.get("reasoning", "No reasoning provided.")
+    agents = decision_json.get("agents", [])
+    if isinstance(agents, str):
+        agents = [agents]
+    if not isinstance(agents, list):
+        agents = []
+
+    filtered_agents = [agent for agent in agents if agent in ALLOWED_AGENTS]
+    if not filtered_agents:
+        filtered_agents = ["WEB_SEARCH_AGENT"]
+
+    return {
+        "reasoning": str(reasoning),
+        "agents": filtered_agents,
+    }
 
 def decide_route(query: str, pdf_uploaded: bool):
     """Uses the LLM to decide which agent(s) to call."""
@@ -62,6 +99,7 @@ def decide_route(query: str, pdf_uploaded: bool):
         
         # Use the robust JSON extraction function
         decision_json = extract_json_from_string(response.text)
+        decision_json = normalize_decision(decision_json)
         
         if not decision_json:
             # This will be triggered if JSON is still not found or is malformed
